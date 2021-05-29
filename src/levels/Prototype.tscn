@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resource/main_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://resource/main_tileset_no_col.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/hud/HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/level_objs/checkpoint/CHECKPOINT.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/level_objs/checkpoint/CHECKPOINT_CONTAINER.gd" type="Script" id=10]
+[ext_resource path="res://src/level_objs/moving_platforms/MOVING_BALL2X.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10265.1, 78.6781 )
@@ -18,7 +19,16 @@ extents = Vector2( 10265.1, 78.6781 )
 extents = Vector2( 127.897, 3686.9 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 421.795, 381.911 )
+extents = Vector2( 93.5303, 3393.1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3372.6, 390.388 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 408.988, 264.107 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 344.918, 224.884 )
 
 [node name="Prototype" type="Node2D"]
 
@@ -28,7 +38,7 @@ extents = Vector2( 421.795, 381.911 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 124, 124 )
 format = 1
-tile_data = PoolIntArray( -2097183, 1610612736, 0, -2031647, 1610612736, 0, -1966111, 1610612736, 0, -1900575, 1610612736, 0, -1835039, 1610612736, 0, -1835035, 0, 0, -1769499, 0, 0, -1703963, 0, 0, -1638427, 0, 0, -1572891, 0, 0, -1507359, 0, 0, -1507358, 1073741825, 0, -1507355, 0, 0, -1507341, 1073741824, 0, -1507339, 1073741824, 0, -1507337, 1073741824, 0, -1507336, 1073741824, 0, -1507335, 1610612736, 0, -1441823, 0, 0, -1441806, 1073741825, 0, -1441798, 1610612737, 0, -1376287, 0, 0, -1376271, 1073741825, 0, -1376261, 1610612737, 0, -1310751, 0, 0, -1310736, 1073741825, 0, -1310724, 1610612737, 0, -1245215, 0, 0, -1245206, 1073741824, 0, -1245205, 1073741824, 0, -1245204, 1073741824, 0, -1245203, 1073741824, 0, -1245202, 1073741824, 0, -1245201, 1073741824, 0, -1245187, 1610612737, 0, -1179679, 0, 0, -1179650, 1610612737, 0, -1179649, -1073741824, 0, -1245184, -1073741824, 0, -1245183, -1073741824, 0, -1245182, -1073741824, 0, -1245181, -1073741824, 0, -1245180, -1073741824, 0, -1245175, 0, 0, -1245174, 1073741824, 0, -1245173, 0, 0, -1245169, 1610612736, 0, -1245165, 1610612736, 0, -1179633, 1073741825, 0, -1179629, 1610612737, 0, -1048607, 0, 0, -917535, 0, 0, -917483, 0, 0, -917482, 1073741824, 0, -917481, 0, 0, -655346, 536870913, 0, -655345, 1610612736, 0, -655344, 1610612736, 0, -655343, 1610612736, 0, -655342, 1610612736, 0, -655341, 1610612736, 0, -655340, 1, 0, -589810, 1610612736, 0, -589804, 1610612736, 0, -524274, 1610612736, 0, -524268, 1610612736, 0, -393220, 1073741824, 0, -393219, 1073741824, 0, -393218, 1073741824, 0, -393217, 1073741824, 0, -458752, 1073741824, 0, -458751, 1073741824, 0, -458750, 1610612736, 0, -458749, 1610612736, 0, -458748, 1610612736, 0, -458747, 1610612736, 0, -458746, 1610612736, 0, -458745, 1610612736, 0, -458744, 1610612736, 0, -458743, 1610612736, 0, -458742, 1610612736, 0, -458738, 1610612737, 0, -458737, 1610612736, 0, -458736, 1610612736, 0, -458735, 1610612736, 0, -458734, 1610612736, 0, -458733, 1610612736, 0, -458732, 1073741825, 0, -327684, 1073741824, 0, -327683, 1073741825, 0, -262148, 1073741824, 0, -196613, 1073741824, 0, -196612, 1073741824, 0, -131077, 1073741824, 0, -65541, 1073741824, 0, -5, 1073741824, 0, -4, 1610612737, 0, -3, -536870911, 0, 65534, 1, 0, 131071, 1, 0, 131072, 1, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0 )
+tile_data = PoolIntArray( -2293791, 3, 0, -2097183, 1610612736, 0, -2031647, 1610612736, 0, -1966111, 1610612736, 0, -1900575, 1610612736, 0, -1835039, 1610612736, 0, -1835035, 0, 0, -1769499, 0, 0, -1703963, 0, 0, -1638427, 0, 0, -1572891, 0, 0, -1507359, 0, 0, -1507358, 1073741825, 0, -1507355, 0, 0, -1507341, 1073741824, 0, -1507339, 1073741824, 0, -1507337, 1073741824, 0, -1507336, 1073741824, 0, -1507335, 1610612736, 0, -1441823, 0, 0, -1441806, 1073741825, 0, -1441798, 1610612737, 0, -1376287, 0, 0, -1376271, 1073741825, 0, -1376261, 1610612737, 0, -1310751, 0, 0, -1310736, 1073741825, 0, -1310724, 1610612737, 0, -1245215, 0, 0, -1245206, 1073741824, 0, -1245205, 1073741824, 0, -1245204, 1073741824, 0, -1245203, 1073741824, 0, -1245202, 1073741824, 0, -1245201, 1073741824, 0, -1245187, 1610612737, 0, -1179679, 0, 0, -1179650, 1610612737, 0, -1179649, -1073741824, 0, -1245184, -1073741824, 0, -1245183, -1073741824, 0, -1245182, -1073741824, 0, -1245181, -1073741824, 0, -1245180, -1073741824, 0, -1245175, 0, 0, -1245174, 1073741824, 0, -1245173, 0, 0, -1245169, 1610612736, 0, -1245165, 1610612736, 0, -1179633, 1073741825, 0, -1179629, 1610612737, 0, -1048607, 0, 0, -917535, 0, 0, -917483, 0, 0, -917482, 1073741824, 0, -917481, 0, 0, -655346, 536870913, 0, -655345, 1610612736, 0, -655344, 1610612736, 0, -655343, 1610612736, 0, -655342, 1610612736, 0, -655341, 1610612736, 0, -655340, 1, 0, -589810, 1610612736, 0, -589804, 1610612736, 0, -524274, 1610612736, 0, -524268, 1610612736, 0, -393220, 1073741824, 0, -393219, 1073741824, 0, -393218, 1073741824, 0, -393217, 1073741824, 0, -458752, 1073741824, 0, -458751, 1073741824, 0, -458750, 1610612736, 0, -458749, 1610612736, 0, -458748, 1610612736, 0, -458747, 1610612736, 0, -458746, 1610612736, 0, -458745, 1610612736, 0, -458744, 1610612736, 0, -458743, 1610612736, 0, -458742, 1610612736, 0, -458738, 1610612737, 0, -458737, 1610612736, 0, -458736, 1610612736, 0, -458735, 1610612736, 0, -458734, 1610612736, 0, -458733, 1610612736, 0, -458732, 1073741825, 0, -327684, 1073741824, 0, -327683, 1073741825, 0, -262148, 1073741824, 0, -196613, 1073741824, 0, -196612, 1073741824, 0, -131077, 1073741824, 0, -65541, 1073741824, 0, -5, 1073741824, 0, -4, 1610612737, 0, -3, -536870911, 0, 65534, 1, 0, 131071, 1, 0, 131072, 1, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0 )
 
 [node name="TileMap_nocol" type="TileMap" parent="MAINLVL"]
 tile_set = ExtResource( 2 )
@@ -44,6 +54,18 @@ cell_size = Vector2( 124, 124 )
 format = 1
 tile_data = PoolIntArray( -1507340, 2, 0, -1507338, 2, 0, -1245168, 2, 0, -1245167, 2, 0, -1245166, 2, 0, -1114143, 2, 0, -983071, 2, 0, -917517, 2, 0, -851989, 2, 0, -851984, 2, 0, -851977, 2, 0, -851974, 2, 0, -851971, 2, 0, -851969, 2, 0, -786450, 2, 0, -786445, 2, 0, -786436, 2, 0, -720901, 2, 0 )
 script = ExtResource( 5 )
+
+[node name="TileMap2Xscale" type="TileMap" parent="MAINLVL"]
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+
+[node name="MOVING_PLATFORMS" type="Node2D" parent="MAINLVL"]
+
+[node name="MOVING_BALL2X" parent="MAINLVL/MOVING_PLATFORMS" instance=ExtResource( 11 )]
+position = Vector2( -3695.91, -5302.65 )
+rotation = 1.5708
 
 [node name="OBJS" type="Node2D" parent="."]
 
@@ -76,10 +98,16 @@ texture = ExtResource( 6 )
 color = Color( 0, 0.321569, 1, 1 )
 
 [node name="Light2D4" type="Light2D" parent="LIGHTS"]
-position = Vector2( -3544.05, -2691.47 )
-scale = Vector2( 7.09211, 26.0139 )
+position = Vector2( -4098.42, -2635.41 )
+scale = Vector2( 15.7542, 25.1379 )
 texture = ExtResource( 6 )
 color = Color( 1, 1, 1, 0.619608 )
+
+[node name="Light2D5" type="Light2D" parent="LIGHTS"]
+position = Vector2( -4021.13, -5790.77 )
+scale = Vector2( 15.4006, 25.1379 )
+texture = ExtResource( 6 )
+color = Color( 0.054902, 1, 0, 0.619608 )
 
 [node name="DEADZONES" type="Node2D" parent="."]
 
@@ -95,6 +123,18 @@ position = Vector2( 3832, -1112 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DEADZONES/DEADZONE2"]
 shape = SubResource( 2 )
 
+[node name="DEADZONE3" parent="DEADZONES" instance=ExtResource( 7 )]
+position = Vector2( -5404.54, -2185.74 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEADZONES/DEADZONE3"]
+shape = SubResource( 3 )
+
+[node name="DEADZONE4" parent="DEADZONES" instance=ExtResource( 7 )]
+position = Vector2( 573.875, -4711.82 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEADZONES/DEADZONE4"]
+shape = SubResource( 4 )
+
 [node name="GUI" type="Node2D" parent="."]
 
 [node name="HUD" parent="GUI" instance=ExtResource( 8 )]
@@ -103,11 +143,19 @@ shape = SubResource( 2 )
 script = ExtResource( 10 )
 player_path = NodePath("../OBJS/PLAYER")
 
-[node name="CHECKPOINT" parent="CHECKPOINTS" instance=ExtResource( 9 )]
+[node name="CHECKPOINT0" parent="CHECKPOINTS" instance=ExtResource( 9 )]
+position = Vector2( 434.509, 170.807 )
+
+[node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT0" index="0"]
+shape = SubResource( 5 )
+
+[node name="CHECKPOINT1" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( -3513.68, -3784.94 )
 rotation = 1.5708
 
-[node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT" index="0"]
-shape = SubResource( 3 )
+[node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT1" index="0"]
+shape = SubResource( 6 )
 
-[editable path="CHECKPOINTS/CHECKPOINT"]
+[editable path="CHECKPOINTS/CHECKPOINT0"]
+
+[editable path="CHECKPOINTS/CHECKPOINT1"]
