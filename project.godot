@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "CHECKPOINT_CONTAINER",
+"language": "GDScript",
+"path": "res://src/level_objs/checkpoint/CHECKPOINT_CONTAINER.gd"
+}, {
 "base": "TileMap",
 "class": "KillerTilemap",
 "language": "GDScript",
 "path": "res://src/level_objs/KillerTilemap/KillerTilemap.gd"
 } ]
 _global_script_class_icons={
+"CHECKPOINT_CONTAINER": "",
 "KillerTilemap": ""
 }
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resource/main_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://resource/main_tileset_no_col.tres" type="TileSet" id=2]
@@ -7,12 +7,18 @@
 [ext_resource path="res://src/level_objs/KillerTilemap/KillerTilemap.gd" type="Script" id=5]
 [ext_resource path="res://assets/texture/Retina/tile.png" type="Texture" id=6]
 [ext_resource path="res://src/level_objs/deadzone/DEADZONE.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/hud/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/level_objs/checkpoint/CHECKPOINT.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/level_objs/checkpoint/CHECKPOINT_CONTAINER.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10265.1, 78.6781 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 127.897, 3686.9 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 421.795, 381.911 )
 
 [node name="Prototype" type="Node2D"]
 
@@ -88,3 +94,20 @@ position = Vector2( 3832, -1112 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DEADZONES/DEADZONE2"]
 shape = SubResource( 2 )
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 8 )]
+
+[node name="CHECKPOINTS" type="Node2D" parent="."]
+script = ExtResource( 10 )
+player_path = NodePath("../OBJS/PLAYER")
+
+[node name="CHECKPOINT" parent="CHECKPOINTS" instance=ExtResource( 9 )]
+position = Vector2( -3513.68, -3784.94 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT" index="0"]
+shape = SubResource( 3 )
+
+[editable path="CHECKPOINTS/CHECKPOINT"]

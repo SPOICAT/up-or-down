@@ -4,19 +4,19 @@ const file_name = "user://savegame.save"
 
 var data = {}
 
+signal saving_data
+
 onready var player = null
 
 func start():
 	apply_loaded_data()
-	
-func _exit_tree():
-	save_data()
-	#print(load_data())
 
 func save_data():
-	data["transform"] = player.transform
+	if player.current_checkpoint != null:
+		data["current_checkpoint"] = player.current_checkpoint.transform
 	var f = File.new()
 	f.open(file_name, f.WRITE)
+	emit_signal("saving_data")
 	f.store_var(data)
 	f.close()
 	
@@ -32,11 +32,12 @@ func load_data():
 		return data
 	
 func apply_loaded_data():
-	if load_data().empty():
+	if load_data().empty() and player.current_checkpoint != null:
 		data = {
-			"transform": player.transform
+			"current_checkpoint": player.current_checkpoint.transform
 		}
 	else:
 		data = load_data()
-	player.transform = data["transform"]
-	print(data["transform"])
+	if data.has("current_checkpoint"):
+		player.transform = data["current_checkpoint"]
+	print(data)

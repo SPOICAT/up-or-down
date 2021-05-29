@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 var dead : bool = false
 
+var current_checkpoint = null
+
 export var speed = 1200
 export var gravity = 4000
 export var jump_speed = -1200

@@ -4,3 +4,9 @@
 
 [node name="CHECKPOINT" type="Area2D"]
 script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="hint" type="RayCast2D" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_CHECKPOINT_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_CHECKPOINT_body_exited"]
