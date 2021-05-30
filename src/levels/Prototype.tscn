@@ -193,6 +193,7 @@ shape = SubResource( 5 )
 [node name="GUI" type="Node2D" parent="."]
 
 [node name="HUD" parent="GUI" instance=ExtResource( 8 )]
+player_path = NodePath("../../OBJS/PLAYER")
 
 [node name="CHECKPOINTS" type="Node2D" parent="."]
 script = ExtResource( 10 )
