@@ -4,6 +4,8 @@ var dead : bool = false
 
 var current_checkpoint = null
 
+#TODO LIVES (PLAYER COMPLETELY RESTARTS FROM START WHEN OUT OF LIVES)
+
 export var speed = 1200
 var backed_speed = null
 export var gravity = 4000
@@ -25,9 +27,6 @@ func _ready():
 
 var vel = Vector2.ZERO
 
-signal go_trail
-signal stop_trail
-
 var snap
 var is_jumping : bool = false
 
@@ -46,6 +45,7 @@ func get_input():
 		$Sprite.scale.x = dir
 		vel.x = lerp(vel.x, dir * speed, acceleration)
 	else:
+		$Trail.erase_trail()
 		vel.x =  lerp(vel.x, 0, friction)
 
 func reload_checkpoint():
@@ -69,7 +69,7 @@ func _physics_process(delta):
 	
 	if dead:
 		
-		emit_signal("stop_trail")
+		$Trail.erase_trail()
 		
 		if backed_speed == null:
 			backed_speed = speed
@@ -87,8 +87,6 @@ func _physics_process(delta):
 		hide()
 		
 		reload_checkpoint()
-	else:
-		emit_signal("go_trail")
 
 
 	get_input()
