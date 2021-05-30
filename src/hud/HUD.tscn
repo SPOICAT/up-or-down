@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/raw_fonts/tiny.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/texture/Retina/tile.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -37,3 +38,17 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="save_status"]
 anims/saving_data_ani = SubResource( 2 )
+
+[node name="VISUAL_EFFECTS" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="light" type="Light2D" parent="VISUAL_EFFECTS"]
+position = Vector2( 531.834, 285.649 )
+scale = Vector2( 11.8316, 7.65208 )
+texture = ExtResource( 3 )
+color = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
+energy = 0.5

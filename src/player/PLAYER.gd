@@ -31,12 +31,17 @@ signal stop_trail
 var snap
 var is_jumping : bool = false
 
+var is_moving : bool = false
+
 func get_input():
+	is_moving = false
 	var dir = 0
 	if Input.is_action_pressed("move_left"):
 		dir -= 1
+		is_moving = true
 	if Input.is_action_pressed("move_right"):
 		dir += 1
+		is_moving = true
 	if dir != 0:
 		$Sprite.scale.x = dir
 		vel.x = lerp(vel.x, dir * speed, acceleration)
@@ -86,7 +91,6 @@ func _physics_process(delta):
 		emit_signal("go_trail")
 
 
-	
 	get_input()
 	
 	vel.y += gravity * delta
