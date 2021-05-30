@@ -25,6 +25,9 @@ func _ready():
 
 var vel = Vector2.ZERO
 
+signal go_trail
+signal stop_trail
+
 var snap
 var is_jumping : bool = false
 
@@ -60,6 +63,9 @@ func _physics_process(delta):
 	KillerTilemap_check()
 	
 	if dead:
+		
+		emit_signal("stop_trail")
+		
 		if backed_speed == null:
 			backed_speed = speed
 		else:
@@ -76,6 +82,8 @@ func _physics_process(delta):
 		hide()
 		
 		reload_checkpoint()
+	else:
+		emit_signal("go_trail")
 
 
 	
