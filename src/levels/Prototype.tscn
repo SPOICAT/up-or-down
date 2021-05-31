@@ -12,7 +12,7 @@
 [ext_resource path="res://src/level_objs/moving_platforms/MOVING_BALL2X.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/level_objs/moving_platforms/MOVING_REDPLATFORM.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/level_objs/AIs/dumb_ai_player_chaser.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/level_objs/collectables/lives_collectable.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/level_objs/collectables/lives_collectable/lives_collectable.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/level_objs/collectables/Collectables_Container.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -98,6 +98,10 @@ player_path = NodePath("../PLAYER")
 [node name="lives_collectable" parent="OBJS/Collectables_Container" instance=ExtResource( 14 )]
 position = Vector2( -3647.13, -3986.92 )
 rotation = 1.5708
+
+[node name="lives_collectable2" parent="OBJS/Collectables_Container" instance=ExtResource( 14 )]
+position = Vector2( -2019.97, -6635.93 )
+rotation = -1.5708
 
 [node name="LIGHTS" type="Node2D" parent="."]
 

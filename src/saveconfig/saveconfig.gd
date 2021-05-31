@@ -7,6 +7,7 @@ var data = {}
 signal saving_data
 
 onready var player = null
+onready var applied_collectables = get_node("../AppliedCollectables")
 
 func start():
 	if load_data()["lives"] > 0:
@@ -22,6 +23,8 @@ func save_data():
 		data["current_checkpoint"] = player.current_checkpoint.transform
 	if player.lives != null:
 		data["lives"] = player.lives
+	data["applied_collectables"] = applied_collectables.nodes
+	
 	var f = File.new()
 	f.open(file_name, f.WRITE)
 	emit_signal("saving_data")
@@ -43,7 +46,8 @@ func apply_loaded_data():
 	if load_data().empty() and player.current_checkpoint != null:
 		data = {
 			"current_checkpoint": player.current_checkpoint.transform,
-			"lives": player.lives
+			"lives": player.lives,
+			"applied_collectables": []
 		}
 	else:
 		data = load_data()
@@ -51,3 +55,5 @@ func apply_loaded_data():
 		player.transform = data["current_checkpoint"]
 	if data.has("lives"):
 		player.lives = data["lives"]
+	if data.has("applied_collectables"):
+		applied_collectables.nodes = data["applied_collectables"]

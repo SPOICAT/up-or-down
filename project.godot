@@ -267,6 +267,7 @@ config/icon="res://icon.png"
 [autoload]
 
 saveconfig="*res://src/saveconfig/saveconfig.gd"
+AppliedCollectables="*res://src/level_objs/collectables/applied_collectables.gd"
 
 [display]
 
