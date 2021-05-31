@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var saveconfig = get_node("/root/saveconfig")
+#TODO save variable applied so it wont appear again
 
 signal apply_effect
 var applied : bool = false
