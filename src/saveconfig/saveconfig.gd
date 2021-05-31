@@ -51,4 +51,3 @@ func apply_loaded_data():
 		player.transform = data["current_checkpoint"]
 	if data.has("lives"):
 		player.lives = data["lives"]
-	print(data)
