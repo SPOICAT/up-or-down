@@ -15,6 +15,7 @@ func start():
 
 func delete_data():
 	data = {}
+	applied_collectables.nodes.clear()
 	save_data()
 	
 
