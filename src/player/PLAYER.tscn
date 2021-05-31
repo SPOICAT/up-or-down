@@ -31,4 +31,4 @@ default_color = Color( 0.623529, 0.623529, 0.623529, 1 )
 gradient = SubResource( 2 )
 antialiased = true
 script = ExtResource( 3 )
-degen_rate = 50
+degen_rate = 100

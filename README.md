@@ -13,6 +13,7 @@
 
 ## Credits for resourses that aren't mine:
 - The Sprites and Tileset used: [Kenney's Scribble Platformer](https://www.kenney.nl/assets/scribble-platformer) (I modified a few things to suit the game theme as it's allowed as the asset pack's license)
+- Fonts: [Tiny](https://www.fontspace.com/tiny-font-f4800)
 
 ## Godot Engine plugins being used for this project:
 - [Godot-Next](https://github.com/godot-extended-libraries/godot-next)

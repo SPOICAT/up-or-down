@@ -4,7 +4,7 @@ var dead : bool = false
 
 var current_checkpoint = null
 
-var lives : int = 4
+var lives : int = 10
 
 export var speed = 1200
 var backed_speed = null
@@ -102,11 +102,16 @@ func _physics_process(delta):
 	vel = vel.rotated(-rotation)
 	
 	if is_on_floor():
+		if $Trail.width < 100:
+			$Trail.width += 1
 		rotation = get_floor_normal().angle() + PI/2
 		is_jumping = false
 		if Input.is_action_just_pressed("jump"):
 			is_jumping = true
 			vel.y = jump_speed
+	else:
+		if $Trail.width > 75:
+			$Trail.width -= 1
 			
 	if sign(vel.x) == 0:
 		$Trail.erase_trail()
