@@ -50,7 +50,7 @@ func get_input():
 func reload_checkpoint():
 	saveconfig.apply_loaded_data()
 	dead = false
-	speed = backed_speed
+	$revive_timer.start()
 	gravity = backed_gravity
 	jump_speed = backed_jump_speed
 	show()
@@ -89,11 +89,11 @@ func _physics_process(delta):
 			reload_checkpoint()
 			lives -= 1
 		else:
-			#TODO UNCOMMENT THIS TOO saveconfig.delete_data()
+			saveconfig.delete_data()
 			get_tree().reload_current_scene()
-
+			
 	get_input()
-	
+		
 	vel.y += gravity * delta
 	
 	snap = Vector2.DOWN * 128 if !is_jumping else Vector2.ZERO
@@ -115,3 +115,7 @@ func _physics_process(delta):
 			
 	if sign(vel.x) == 0:
 		$Trail.erase_trail()
+
+
+func _on_revive_timer_timeout():
+	speed = backed_speed

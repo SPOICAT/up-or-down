@@ -32,3 +32,7 @@ gradient = SubResource( 2 )
 antialiased = true
 script = ExtResource( 3 )
 degen_rate = 100
+
+[node name="revive_timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="revive_timer" to="." method="_on_revive_timer_timeout"]

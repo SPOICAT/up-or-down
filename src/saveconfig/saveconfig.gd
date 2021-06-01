@@ -10,9 +10,8 @@ onready var player = null
 onready var applied_collectables = get_node("../AppliedCollectables")
 
 func start():
-	# TODO UNCOMMENT THIS if load_data()["lives"] > 0:
-	#TODO FIX IDENT of apply_loaded_data
-	apply_loaded_data()
+	if load_data()["lives"] > 0:
+		apply_loaded_data()
 
 func delete_data():
 	data = {}
