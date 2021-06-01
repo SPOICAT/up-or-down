@@ -2,7 +2,7 @@
 <p align="center"><i><b>[Under Development!]</b></i></p>
 
 ## Description:
-![SS1](https://drive.google.com/uc?export=view&id=1282JDPkcAcq2g_5vLzTZN1DnPYO7Tu12)
+![SCREENSHOT](https://raw.githubusercontent.com/SPOICAT/up-or-down/main/info/SS1.PNG)
 
 **"Up or Down"** is a 2D Platformer game where you simply won't remember the angles. (YEAH)
 
