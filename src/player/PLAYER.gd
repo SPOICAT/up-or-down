@@ -6,12 +6,14 @@ var current_checkpoint = null
 
 var lives : int = 12
 
-export var speed = 1200
-var backed_speed = null
-export var gravity = 4000
-var backed_gravity = null
-export var jump_speed = -1200
-var backed_jump_speed = null
+const init_speed = 1200
+var speed = init_speed
+
+const init_gravity = 4000
+var gravity = init_gravity
+
+const init_jump_speed = -1200
+var jump_speed = init_jump_speed
 
 export(float, 0,1) var acceleration = 0.25
 export(float, 0,1) var friction = 0.1
@@ -53,7 +55,7 @@ func reload_checkpoint():
 	speed = 1200
 	dead = false
 	$revive_timer.start()
-	gravity = backed_gravity
+	gravity = init_gravity
 	show()
 
 func KillerTilemap_check():
@@ -71,18 +73,9 @@ func _physics_process(delta):
 		
 		$Trail.erase_trail()
 		
-		if backed_speed == null:
-			backed_speed = speed
-		else:
-			speed = 0
-		if backed_gravity == null:
-			backed_gravity = gravity
-		else:
-			gravity = 0
-		if backed_jump_speed == null:
-			backed_jump_speed = jump_speed
-		else:
-			jump_speed = 0
+		speed = 0
+		gravity = 0
+		jump_speed = 0
 			
 		hide()
 		
@@ -119,5 +112,5 @@ func _physics_process(delta):
 
 
 func _on_revive_timer_timeout():
-	speed = backed_speed
-	jump_speed = backed_jump_speed
+	speed = init_speed
+	jump_speed = init_jump_speed
