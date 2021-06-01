@@ -49,6 +49,8 @@ func get_input():
 
 func reload_checkpoint():
 	saveconfig.apply_loaded_data()
+	Engine.time_scale = 1
+	speed = 1200
 	dead = false
 	$revive_timer.start()
 	gravity = backed_gravity

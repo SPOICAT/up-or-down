@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/level_objs/misc/SLOWMO_TRIGGER_CONTAINER.gd" type="Script" id=1]
+
+[node name="SLOWMO_TRIGGER_CONTAINER" type="Node2D"]
+script = ExtResource( 1 )
