@@ -20,25 +20,25 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 625.317, 350.679 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 506.179, 275.792 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 408.988, 264.107 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 344.918, 224.884 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 645.83, 414.804 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 402.086, 305.796 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 149.41, 214.234 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 234.412, 127.288 )
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -147,7 +147,7 @@ shape = SubResource( 1 )
 position = Vector2( 5679.54, 282.195 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OBJS/SLOWMO_TOGGLERS/SLOWMO_TOGGLER2"]
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 
 [node name="LIGHTS" type="Node2D" parent="."]
 
@@ -230,14 +230,14 @@ player_path = NodePath("../OBJS/PLAYER")
 position = Vector2( 434.509, 170.807 )
 
 [node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT0" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CHECKPOINT1" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( -3513.68, -3784.94 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT1" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CHECKPOINT2" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( -2104.11, -7007.38 )
@@ -245,28 +245,28 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT2" index="0"]
 position = Vector2( -350.899, 26.6822 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CHECKPOINT3" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( 2132.09, -6663.08 )
 rotation = -2.35619
 
 [node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT3" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CHECKPOINT4" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( 3687.71, -4432.6 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT4" index="0"]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CHECKPOINT5" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( 4727.64, -6820.48 )
 rotation = -1.5708
 
 [node name="CollisionShape2D" parent="CHECKPOINTS/CHECKPOINT5" index="0"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CHECKPOINT6" parent="CHECKPOINTS" instance=ExtResource( 9 )]
 position = Vector2( 5781.31, 1139.76 )

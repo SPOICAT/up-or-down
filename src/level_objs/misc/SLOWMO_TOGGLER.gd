@@ -19,14 +19,12 @@ func _ready():
 func _on_SLOWMO_TOGGLER_body_entered(body):
 	if body.name == "PLAYER" and !applied:
 		if Engine.time_scale == 1:
-			print(0)
 			Engine.time_scale = slow_motion
 			player.speed = player.speed / slow_motion
 			player.gravity = player.gravity / slow_gravity
 			player.jump_speed = player.jump_speed / slow_jump_speed
 			hud.trigger_slow_motion_effect()
 		elif Engine.time_scale == slow_motion:
-			print(1)
 			Engine.time_scale = 1
 			player.speed = player.init_speed
 			player.gravity = player.init_gravity

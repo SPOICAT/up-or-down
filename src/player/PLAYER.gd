@@ -23,6 +23,10 @@ onready var saveconfig = get_node("/root/saveconfig")
 signal ready_for_saveconfig
 
 func _ready():
+	speed = init_speed
+	gravity = init_gravity
+	jump_speed = init_jump_speed
+	Engine.time_scale = 1
 	connect("ready_for_saveconfig", saveconfig, "start")
 	saveconfig.player = get_node(".")
 	emit_signal("ready_for_saveconfig")
