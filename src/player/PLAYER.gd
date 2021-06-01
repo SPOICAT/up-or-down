@@ -49,6 +49,8 @@ func get_input():
 	else:
 		vel.x =  lerp(vel.x, 0, friction)
 
+signal reloaded_checkpoint
+
 func reload_checkpoint():
 	saveconfig.apply_loaded_data()
 	Engine.time_scale = 1
@@ -57,6 +59,7 @@ func reload_checkpoint():
 	$revive_timer.start()
 	gravity = init_gravity
 	show()
+	emit_signal("reloaded_checkpoint")
 
 func KillerTilemap_check():
 	for i in get_slide_count():
@@ -81,7 +84,8 @@ func _physics_process(delta):
 		
 		if lives > 0:
 			reload_checkpoint()
-			#TODO UNCOMMENT THIS AFTER DEBUGGING lives -= 1
+			#TODO COMMENT LINE AFTER THIS TO TEST LEVEL
+			lives -= 1
 		else:
 			saveconfig.delete_data()
 			get_tree().reload_current_scene()
