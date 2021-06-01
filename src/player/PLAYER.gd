@@ -4,7 +4,7 @@ var dead : bool = false
 
 var current_checkpoint = null
 
-var lives : int = 10
+var lives : int = 12
 
 export var speed = 1200
 var backed_speed = null
@@ -89,7 +89,7 @@ func _physics_process(delta):
 			reload_checkpoint()
 			lives -= 1
 		else:
-			saveconfig.delete_data()
+			#TODO UNCOMMENT THIS TOO saveconfig.delete_data()
 			get_tree().reload_current_scene()
 
 	get_input()
