@@ -52,7 +52,6 @@ func reload_checkpoint():
 	dead = false
 	$revive_timer.start()
 	gravity = backed_gravity
-	jump_speed = backed_jump_speed
 	show()
 
 func KillerTilemap_check():
@@ -87,7 +86,7 @@ func _physics_process(delta):
 		
 		if lives > 0:
 			reload_checkpoint()
-			lives -= 1
+			#TODO UNCOMMENT THIS AFTER DEBUGGING lives -= 1
 		else:
 			saveconfig.delete_data()
 			get_tree().reload_current_scene()
@@ -119,3 +118,4 @@ func _physics_process(delta):
 
 func _on_revive_timer_timeout():
 	speed = backed_speed
+	jump_speed = backed_jump_speed
