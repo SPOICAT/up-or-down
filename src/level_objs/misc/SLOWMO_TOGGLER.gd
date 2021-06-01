@@ -8,7 +8,6 @@ export(float) var slow_gravity = 1
 export(float) var slow_jump_speed = 0.25
 
 func _on_SLOWMO_TOGGLER_body_entered(body):
-	print(player)
 	if body.name == "PLAYER" and Engine.time_scale == 1:
 		Engine.time_scale = slow_motion
 		player.speed = player.speed / slow_motion
