@@ -54,11 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-next/references/class_type.gd"
 }, {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
 "base": "TabContainer",
 "class": "Cycle",
 "language": "GDScript",
@@ -94,11 +89,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-next/2d/geometry_2d.gd"
 }, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
-}, {
 "base": "Reference",
 "class": "Icons",
 "language": "GDScript",
@@ -113,11 +103,6 @@ _global_script_classes=[ {
 "class": "InspectorControls",
 "language": "GDScript",
 "path": "res://addons/godot-next/global/inspector_controls.gd"
-}, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
 }, {
 "base": "TileMap",
 "class": "KillerTilemap",
@@ -158,11 +143,6 @@ _global_script_classes=[ {
 "class": "PropertyInfoFactory",
 "language": "GDScript",
 "path": "res://addons/godot-next/references/property_info_factory.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
 }, {
 "base": "ResourceCollection",
 "class": "ResourceArray",
@@ -249,7 +229,6 @@ _global_script_class_icons={
 "CSVFile": "",
 "CallbackDelegator": "",
 "ClassType": "",
-"ContributorClass": "",
 "Cycle": "res://addons/godot-next/icons/icon_cycle.svg",
 "DebugLabel": "",
 "DiscreteGradientTexture": "",
@@ -257,11 +236,9 @@ _global_script_class_icons={
 "FileSearch": "",
 "FileSystemLink": "",
 "Geometry2D": "res://addons/godot-next/icons/icon_geometry_2d.svg",
-"GistItem": "",
 "Icons": "",
 "Inflector": "",
 "InspectorControls": "",
-"InvitationItem": "",
 "KillerTilemap": "",
 "MenuManager": "",
 "MessageDispatcher": "",
@@ -270,7 +247,6 @@ _global_script_class_icons={
 "ProjectTools": "",
 "PropertyInfo": "",
 "PropertyInfoFactory": "",
-"RepositoryItem": "",
 "ResourceArray": "",
 "ResourceCollection": "",
 "ResourceSet": "",
@@ -298,10 +274,6 @@ config/icon="res://icon.png"
 
 saveconfig="*res://src/saveconfig/saveconfig.gd"
 AppliedCollectables="*res://src/level_objs/collectables/applied_collectables.gd"
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 
 [display]
 
@@ -310,7 +282,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Todo_Manager", "github-integration", "godot-next" )
+enabled=PoolStringArray( "Todo_Manager", "godot-next" )
 
 [input]
 
