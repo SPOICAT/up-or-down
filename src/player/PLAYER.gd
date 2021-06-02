@@ -88,8 +88,7 @@ func _physics_process(delta):
 		
 		if lives > 0:
 			reload_checkpoint()
-			#TODO COMMENT LINE AFTER THIS TO TEST LEVEL
-			lives -= 1
+			#TODO:(TO UNCOMMENT AFTER TESTING LEVEL) lives -= 1
 		else:
 			saveconfig.delete_data()
 			get_tree().reload_current_scene()

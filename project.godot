@@ -267,7 +267,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Up Or Down?"
-run/main_scene="res://src/levels/Prototype.tscn"
+run/main_scene="res://src/levels/LEVEL.tscn"
 config/icon="res://icon.png"
 
 [autoload]

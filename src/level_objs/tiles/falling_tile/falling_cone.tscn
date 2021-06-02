@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/level_objs/tiles/falling_tile/falling_cone.gd" type="Script" id=1]
+[ext_resource path="res://assets/texture/Retina/tile_slope.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.732, 57.7906 )
+
+[node name="falling_cone" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -57.7011, -56.9112, 55.3869, 57.8605, -58.543, 57.8605 )
+
+[node name="trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2( -0.471939, 0 )
+shape = SubResource( 1 )
+
+[node name="hint" type="RayCast2D" parent="."]
+[connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]
