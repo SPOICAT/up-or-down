@@ -111,6 +111,53 @@ wait_time = 0.5
 [node name="hint" parent="MAINLVL/FALLING_TILES/falling_cone" index="3"]
 cast_to = Vector2( -50, 50 )
 
+[node name="falling_cone2" parent="MAINLVL/FALLING_TILES" instance=ExtResource( 17 )]
+position = Vector2( 9907.28, 6278.89 )
+fall_speed = Vector2( -50, 50 )
+wait_time = 0.5
+
+[node name="hint" parent="MAINLVL/FALLING_TILES/falling_cone2" index="3"]
+cast_to = Vector2( -50, 50 )
+
+[node name="falling_cone3" parent="MAINLVL/FALLING_TILES" instance=ExtResource( 17 )]
+position = Vector2( 10163.3, 6534.89 )
+fall_speed = Vector2( -50, 50 )
+wait_time = 0.5
+
+[node name="hint" parent="MAINLVL/FALLING_TILES/falling_cone3" index="3"]
+cast_to = Vector2( -50, 50 )
+
+[node name="falling_cone4" parent="MAINLVL/FALLING_TILES" instance=ExtResource( 17 )]
+position = Vector2( 10419.3, 6790.89 )
+rotation = -0.785398
+fall_speed = Vector2( 0, 50 )
+wait_time = 0.5
+
+[node name="hint" parent="MAINLVL/FALLING_TILES/falling_cone4" index="3"]
+cast_to = Vector2( -50, -50 )
+
+[node name="falling_cone5" parent="MAINLVL/FALLING_TILES" instance=ExtResource( 17 )]
+position = Vector2( 10803.3, 6790.89 )
+rotation = -1.5708
+fall_speed = Vector2( 50, 50 )
+wait_time = 0.5
+
+[node name="hint" parent="MAINLVL/FALLING_TILES/falling_cone5" index="3"]
+cast_to = Vector2( -50, -50 )
+
+[node name="falling_cone6" parent="MAINLVL/FALLING_TILES" instance=ExtResource( 17 )]
+position = Vector2( 11059.3, 6534.89 )
+rotation = -2.35619
+fall_speed = Vector2( 50, 0 )
+wait_time = 0.5
+
+[node name="hint" parent="MAINLVL/FALLING_TILES/falling_cone6" index="3"]
+cast_to = Vector2( -50, -50 )
+
+[node name="hint" type="RayCast2D" parent="MAINLVL/FALLING_TILES"]
+position = Vector2( 10624, 6598.89 )
+cast_to = Vector2( 50, 50 )
+
 [node name="OBJS" type="Node2D" parent="."]
 
 [node name="PLAYER" parent="OBJS" instance=ExtResource( 8 )]
@@ -303,6 +350,16 @@ position = Vector2( 5781.31, 1139.76 )
 shape = SubResource( 9 )
 
 [editable path="MAINLVL/FALLING_TILES/falling_cone"]
+
+[editable path="MAINLVL/FALLING_TILES/falling_cone2"]
+
+[editable path="MAINLVL/FALLING_TILES/falling_cone3"]
+
+[editable path="MAINLVL/FALLING_TILES/falling_cone4"]
+
+[editable path="MAINLVL/FALLING_TILES/falling_cone5"]
+
+[editable path="MAINLVL/FALLING_TILES/falling_cone6"]
 
 [editable path="CHECKPOINTS/CHECKPOINT0"]
 
