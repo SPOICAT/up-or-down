@@ -10,7 +10,10 @@ export(bool) var fall = false
 
 var the_timer = null
 
+var starting_pos = global_transform.origin
+
 func _ready():
+	starting_pos = global_transform.origin
 	connect("start", self, "start_timer")
 	var timer = Timer.new()
 	timer.wait_time = wait_time
@@ -24,8 +27,17 @@ func start_timer():
 func do_fall():
 	fall = true
 
+func reset():
+	global_transform.origin = starting_pos
+	fall = false
+	the_timer.queue_free()
+	var timer = Timer.new()
+	timer.wait_time = wait_time
+	add_child(timer)
+	timer.connect("timeout", self, "do_fall")
+	the_timer = timer
+
 func _physics_process(delta):
 	if fall:
 		fall_speed = Vector2(fall_speed.x + sign(fall_speed.x) * friction, fall_speed.y + sign(fall_speed.y) * friction)
 		global_transform.origin += fall_speed
-		print(fall_speed)
