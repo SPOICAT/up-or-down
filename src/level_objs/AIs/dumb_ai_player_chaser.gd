@@ -9,6 +9,23 @@ var vel = Vector2.ZERO
 var snap
 var dir = 0
 
+onready var left_cast = $dir_detector/left
+onready var right_cast = $dir_detector/right
+
+func _ready():
+	for casts in $dir_detector.get_children():
+		casts.force_raycast_update()
+		casts.add_exception(self)
+
+func raycast_col_check(raycast, colliding_with):
+	var value
+	if raycast.is_colliding():
+		if raycast.get_collider().name == colliding_with:
+			 value = true
+	else:
+		value = false
+	return value
+
 func collision_check(colliding_with):
 	for i in get_slide_count():
 		var col = get_slide_collision(i)
@@ -24,20 +41,17 @@ export(float, 0,1) var friction = 0.1
 
 func _physics_process(delta):
 	
-	#print(collision_check("player"))
-	
 	if player:
 		
 		if collision_check(player.name):
 			player.dead = true
 		
 		dir = 0
-		if player.position.x < position.x:
-			dir -= 1 * sign(-rotation)
-		elif player.position.x > position.x:
-			dir += 1 * sign(-rotation)
+		if raycast_col_check(left_cast, player.name):
+			dir -= 1
+		elif raycast_col_check(right_cast, player.name):
+			dir += 1
 		if dir != 0:
-			$Sprite.scale.x = dir
 			vel.x = lerp(vel.x, dir * speed, acceleration)
 		else:
 			vel.x = lerp(vel.x, 0, friction)
@@ -49,6 +63,9 @@ func _physics_process(delta):
 	
 	vel = move_and_slide_with_snap(vel.rotated(rotation), snap, -transform.y, true, 4, PI/3)
 	vel = vel.rotated(-rotation)
+	
+	if (not sign($Sprite.scale.x) == 0) and (not sign(vel.x) == 0):
+		$Sprite.scale.x = sign(vel.x)
 	
 	if is_on_floor():
 		rotation = get_floor_normal().angle() + PI/2
