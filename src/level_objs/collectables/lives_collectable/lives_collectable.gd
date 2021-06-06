@@ -5,3 +5,4 @@ func _ready():
 
 func lives_up(by = 1):
 	player.lives += by
+	player.get_node("SoundEffects/Liveup").play()

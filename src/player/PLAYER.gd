@@ -80,6 +80,8 @@ func _physics_process(delta):
 		
 		$Trail.erase_trail()
 		
+		$SoundEffects/Hit.play()
+		
 		speed = 0
 		gravity = 0
 		jump_speed = 0
@@ -109,6 +111,7 @@ func _physics_process(delta):
 		is_jumping = false
 		if Input.is_action_just_pressed("jump"):
 			is_jumping = true
+			$SoundEffects/Jump.play()
 			vel.y = jump_speed
 	else:
 		if $Trail.width > 75:
