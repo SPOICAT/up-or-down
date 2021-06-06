@@ -280,6 +280,7 @@ config/icon="res://icon.png"
 
 saveconfig="*res://src/saveconfig/saveconfig.gd"
 AppliedCollectables="*res://src/level_objs/collectables/applied_collectables.gd"
+GameEndC="*res://src/game_end/game_end_c.gd"
 
 [display]
 

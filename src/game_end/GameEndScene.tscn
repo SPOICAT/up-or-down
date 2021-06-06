@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/raw_fonts/tiny.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/game_end/GameEndScene.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="GameEndScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 246.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "YOU DID IT!"
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -234.0
+margin_top = -16.5
+margin_right = 234.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 1 )
+text = "You've beaten the game!"
+
+[node name="ExitGameButton" type="Button" parent="."]
+margin_left = 884.0
+margin_top = 550.0
+margin_right = 991.0
+margin_bottom = 573.0
+custom_fonts/font = SubResource( 2 )
+text = "Exit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="Button" parent="."]
+margin_left = 759.0
+margin_top = 550.0
+margin_right = 866.0
+margin_bottom = 573.0
+custom_fonts/font = SubResource( 2 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="ExitGameButton" to="." method="_on_ExitGameButton_button_down"]
+[connection signal="button_down" from="RestartButton" to="." method="_on_RestartButton_button_down"]

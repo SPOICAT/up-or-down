@@ -10,21 +10,24 @@ onready var player = null
 onready var applied_collectables = get_node("../AppliedCollectables")
 
 func start():
-	if load_data()["lives"] > 0:
-		apply_loaded_data()
-
+	if load_data().has("lives"):
+		if load_data()["lives"] > 0:
+			apply_loaded_data()
+		
 func delete_data():
 	data = {}
 	applied_collectables.nodes.clear()
 	save_data()
-	
 
 func save_data():
-	if player.current_checkpoint != null:
-		data["current_checkpoint"] = player.current_checkpoint.transform
-	if player.lives != null:
-		data["lives"] = player.lives
+	if player != null:
+		if player.current_checkpoint != null:
+			data["current_checkpoint"] = player.current_checkpoint.transform
+		if player.lives != null:
+			data["lives"] = player.lives
 	data["applied_collectables"] = applied_collectables.nodes
+	data["game_ended"] = GameEndC.game_ended
+	print("SAVING: ", data["game_ended"])
 	
 	var f = File.new()
 	f.open(file_name, f.WRITE)
@@ -58,3 +61,6 @@ func apply_loaded_data():
 		player.lives = data["lives"]
 	if data.has("applied_collectables"):
 		applied_collectables.nodes = data["applied_collectables"]
+	if data.has("game_ended"):
+		GameEndC.game_ended = data["game_ended"]
+		print("APPLYING LOADED ", data["game_ended"])
