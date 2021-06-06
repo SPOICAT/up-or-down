@@ -14,6 +14,9 @@
 
 
 ## Credits:
-- Game: [SPOICAT](https://github.com/SPOICAT)
+
+- Game: [SPOICAT](https://spoicat.itch.io/)
+- Sound Effects: [SPOICAT](https://spoicat.itch.io/)
 - The Sprites and Tileset: [Kenney's Scribble Platformer](https://www.kenney.nl/assets/scribble-platformer) *(Modified)*
 - Fonts: [Tiny](https://www.fontspace.com/tiny-font-f4800)
+- Music: [jhaeka](https://joshuuu.itch.io/)
