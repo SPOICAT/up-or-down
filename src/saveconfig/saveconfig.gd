@@ -27,7 +27,6 @@ func save_data():
 			data["lives"] = player.lives
 	data["applied_collectables"] = applied_collectables.nodes
 	data["game_ended"] = GameEndC.game_ended
-	print("SAVING: ", data["game_ended"])
 	
 	var f = File.new()
 	f.open(file_name, f.WRITE)
@@ -63,4 +62,3 @@ func apply_loaded_data():
 		applied_collectables.nodes = data["applied_collectables"]
 	if data.has("game_ended"):
 		GameEndC.game_ended = data["game_ended"]
-		print("APPLYING LOADED ", data["game_ended"])

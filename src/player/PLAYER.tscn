@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/texture/Retina/character_squarePurple.png" type="Texture" id=1]
 [ext_resource path="res://src/player/PLAYER.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sound_effects/Jump.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sound_effects/hit.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sound_effects/Liveup.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/texture/Retina/tile.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38.8075, 62.5289 )
@@ -14,10 +15,8 @@ extents = Vector2( 38.8075, 62.5289 )
 colors = PoolColorArray( 0.623529, 0.623529, 0.623529, 0, 0.623529, 0.623529, 0.623529, 1 )
 
 [node name="PLAYER" type="KinematicBody2D"]
+position = Vector2( 512, 300 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -49,4 +48,13 @@ stream = ExtResource( 5 )
 
 [node name="Liveup" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SpeedPauseEffect" type="Light2D" parent="CanvasLayer"]
+position = Vector2( 506.129, 289.461 )
+scale = Vector2( 26.3163, 17.7787 )
+texture = ExtResource( 7 )
+color = Color( 1, 0, 0, 1 )
+energy = 5.0
 [connection signal="timeout" from="revive_timer" to="." method="_on_revive_timer_timeout"]

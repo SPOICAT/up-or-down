@@ -23,6 +23,7 @@ onready var saveconfig = get_node("/root/saveconfig")
 signal ready_for_saveconfig
 
 func _ready():
+	$CanvasLayer/SpeedPauseEffect.visible = false
 	speed = init_speed
 	gravity = init_gravity
 	jump_speed = init_jump_speed
@@ -57,8 +58,8 @@ signal reloaded_checkpoint
 
 func reload_checkpoint():
 	saveconfig.apply_loaded_data()
+	$CanvasLayer/SpeedPauseEffect.visible = true
 	Engine.time_scale = 1
-	speed = 1200
 	dead = false
 	$revive_timer.start()
 	gravity = init_gravity
@@ -124,3 +125,4 @@ func _physics_process(delta):
 func _on_revive_timer_timeout():
 	speed = init_speed
 	jump_speed = init_jump_speed
+	$CanvasLayer/SpeedPauseEffect.visible = false
