@@ -4,10 +4,15 @@ const file_name = "user://savegame.save"
 
 var data = {}
 
-signal saving_data
-
 onready var player = null
 onready var applied_collectables = get_node("../AppliedCollectables")
+	
+var will_reset_player_pos : bool = false
+	
+func reset_player_pos():
+	player.global_transform.origin = player.starting_pos
+	
+signal level_restarted
 
 func start():
 	if load_data().has("lives"):
@@ -48,7 +53,7 @@ func load_data():
 func apply_loaded_data():
 	if load_data().empty() and player.current_checkpoint != null:
 		data = {
-			"current_checkpoint": player.current_checkpoint.transform,
+			"current_checkpoint": player.starting_pos,
 			"lives": player.lives,
 			"applied_collectables": []
 		}

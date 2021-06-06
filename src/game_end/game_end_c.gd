@@ -10,3 +10,4 @@ func _process(_delta):
 func end_game_check():
 	if game_ended:
 		get_tree().change_scene_to(game_end_scene)
+

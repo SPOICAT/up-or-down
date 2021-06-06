@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var starting_pos
+
 var dead : bool = false
 
 var current_checkpoint = null

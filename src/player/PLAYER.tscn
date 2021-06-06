@@ -22,6 +22,7 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 1.12245, -1.68369 )
 shape = SubResource( 1 )
 
@@ -52,6 +53,7 @@ stream = ExtResource( 6 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SpeedPauseEffect" type="Light2D" parent="CanvasLayer"]
+visible = false
 position = Vector2( 506.129, 289.461 )
 scale = Vector2( 26.3163, 17.7787 )
 texture = ExtResource( 7 )

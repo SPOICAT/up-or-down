@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/level_objs/collectables/Collectables_Container.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/level_objs/AIs/dumb_ai_player_chaser.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://src/level_objs/tiles/falling_tile/falling_tiles_container.gd" type="Script" id=18]
 [ext_resource path="res://assets/music/Spaceship.ogg" type="AudioStream" id=19]
 [ext_resource path="res://src/game_end/GameEndArea.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/levels/LEVEL.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 625.317, 350.679 )
@@ -52,6 +53,8 @@ extents = Vector2( 573.146, 283.467 )
 extents = Vector2( 191.996, 358.271 )
 
 [node name="LEVEL" type="Node2D"]
+script = ExtResource( 21 )
+player_path = NodePath("OBJS/PLAYER")
 
 [node name="MAINLVL" type="Node2D" parent="."]
 

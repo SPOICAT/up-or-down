@@ -10,7 +10,7 @@ export(bool) var fall = false
 
 var the_timer = null
 
-var starting_pos = global_transform.origin
+var starting_pos
 
 func _ready():
 	starting_pos = global_transform.origin
