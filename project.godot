@@ -273,8 +273,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Up Or Down?"
+config/description="A 2D Platformer game where you won't be able to remember the angles."
 run/main_scene="res://src/levels/LEVEL.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
