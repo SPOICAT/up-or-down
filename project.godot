@@ -129,6 +129,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-next/nodes/message_dispatcher_wrapper.gd"
 }, {
+"base": "Node2D",
+"class": "MobileInput",
+"language": "GDScript",
+"path": "res://src/OSconfig/MobileInput.gd"
+}, {
 "base": "Resource",
 "class": "PhysicsLayers",
 "language": "GDScript",
@@ -249,6 +254,7 @@ _global_script_class_icons={
 "MenuManager": "",
 "MessageDispatcher": "",
 "MessageDispatcherWrapper": "",
+"MobileInput": "",
 "PhysicsLayers": "",
 "ProjectTools": "",
 "PropertyInfo": "",
@@ -283,6 +289,7 @@ config/windows_native_icon="res://icon.ico"
 saveconfig="*res://src/saveconfig/saveconfig.gd"
 AppliedCollectables="*res://src/level_objs/collectables/applied_collectables.gd"
 GameEndC="*res://src/game_end/game_end_c.gd"
+OSconfig="*res://src/OSconfig/OSconfig.gd"
 
 [display]
 
@@ -362,6 +369,10 @@ jump={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
