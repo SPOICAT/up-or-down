@@ -1,5 +1,4 @@
 # Up Or Down?
-<p align="center"><i><b>[Under Development!]</b></i></p>
 
 ## Description:
 <div align="center"> <img src="https://raw.githubusercontent.com/SPOICAT/up-or-down/main/info/Cover.png"> </div>
@@ -8,9 +7,11 @@
 
 **"Up or Down"** is a 2D Platformer game where you simply won't remember the angles.
 
-#### Planned Platforms:
-- Windows
-- Android
+**[Checkout this game on Itch.io for more info and download!](https://spoicat.itch.io/up-or-down)**
+
+#### Platforms:
+- Windows (Released)
+- Android (Ain't done yet)
 
 
 ## Credits:
