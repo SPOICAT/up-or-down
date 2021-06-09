@@ -1,17 +1,21 @@
 # Up Or Down?
 
-## Description:
+## Description
+
 <div align="center"> <img src="https://raw.githubusercontent.com/SPOICAT/up-or-down/main/info/Cover.png"> </div>
 
-<hr>
 
-**"Up or Down"** is a 2D Platformer game where you simply won't remember the angles.
+**"Up or Down"** is an open-source 2D puzzle platformer game based on gravity.
+
+## Gameplay
+Player can move **left-right** and **jump**. The gravity is determined the angles of the floor the player is on.
 
 **[Checkout this game on Itch.io for more info and download!](https://spoicat.itch.io/up-or-down)**
 
-#### Platforms:
-- Windows (Released)
-- Android (Ain't done yet)
+
+## Platforms
+- Windows
+- Android
 
 
 ## Credits:
